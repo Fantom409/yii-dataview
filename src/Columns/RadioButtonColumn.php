@@ -113,4 +113,9 @@ class RadioButtonColumn extends Column
 
         return Html::radio($this->name, $checked, $options);
     }
+
+    protected function run(): string
+    {
+        // TODO: Implement run() method.
+    }
 }
