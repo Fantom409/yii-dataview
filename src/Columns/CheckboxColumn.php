@@ -191,4 +191,9 @@ class CheckboxColumn extends Column
         );
         $this->grid->getView()->registerJs("jQuery('#$id').yiiGridView('setSelectionColumn', $options);");
     }
+
+    protected function run(): string
+    {
+        // TODO: Implement run() method.
+    }
 }

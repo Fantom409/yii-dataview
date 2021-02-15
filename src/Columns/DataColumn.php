@@ -243,4 +243,9 @@ class DataColumn extends Column
 
         return parent::renderDataCellContent($model, $key, $index);
     }
+
+    protected function run(): string
+    {
+        // TODO: Implement run() method.
+    }
 }

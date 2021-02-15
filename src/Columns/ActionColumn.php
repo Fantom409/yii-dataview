@@ -250,4 +250,9 @@ class ActionColumn extends Column
             $this->template
         );
     }
+
+    protected function run(): string
+    {
+        // TODO: Implement run() method.
+    }
 }
