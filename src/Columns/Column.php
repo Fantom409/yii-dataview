@@ -61,7 +61,7 @@ abstract class Column extends Widget
      *
      * @see \Yiisoft\Html\Html::renderTagAttributes() for details on how attributes are being rendered.
      */
-    protected $contentOptions = [];
+    protected $contentOptions = ['encode' => false];
     /**
      * @var array the HTML attributes for the footer cell tag.
      *
