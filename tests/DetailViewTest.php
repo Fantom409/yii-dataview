@@ -16,7 +16,7 @@ class DetailViewTest extends TestCase
     public function testAttributeValue(): void
     {
         $model = new ModelMock();
-        $model->id = 123;
+        $model->id = '123';
 
         $widget = PublicDetailView::widget()
             ->model($model)
@@ -26,7 +26,7 @@ class DetailViewTest extends TestCase
                     'id',
                     [
                         'attribute' => 'id',
-                        'value' => 1,
+                        'value' => '1',
                     ],
                     [
                         'attribute' => 'id',
@@ -45,11 +45,11 @@ class DetailViewTest extends TestCase
                 ]
             );
 
-        $this->assertEquals('Id:123', $widget->renderAttr($widget->getAttributes()[0], 0));
-        $this->assertEquals('Id:1', $widget->renderAttr($widget->getAttributes()[1], 1));
-        $this->assertEquals('Id:1', $widget->renderAttr($widget->getAttributes()[2], 2));
-        $this->assertEquals('Id:Displayed 123', $widget->renderAttr($widget->getAttributes()[3], 3));
-        $this->assertEquals('Id:Displayed 123', $widget->renderAttr($widget->getAttributes()[4], 4));
+        $this->assertEquals('id:123', $widget->renderAttr($widget->getAttributes()[0], 0));
+        $this->assertEquals('id:1', $widget->renderAttr($widget->getAttributes()[1], 1));
+        $this->assertEquals('id:1', $widget->renderAttr($widget->getAttributes()[2], 2));
+        $this->assertEquals('id:Displayed 123', $widget->renderAttr($widget->getAttributes()[3], 3));
+        $this->assertEquals('id:Displayed 123', $widget->renderAttr($widget->getAttributes()[4], 4));
         $this->assertEquals(2, $model->getDisplayedIdCallCount());
     }
 
@@ -85,7 +85,7 @@ class DetailViewTest extends TestCase
     public function testAttributeVisible(): void
     {
         $model = new ModelMock();
-        $model->id = 123;
+        $model->id = '123';
 
         $widget = PublicDetailView::widget()
             ->model($model)
@@ -166,7 +166,7 @@ class DetailViewTest extends TestCase
     public function testRelationAttribute(): void
     {
         $model = new ModelMock();
-        $model->id = 123;
+        $model->id = '123';
         $model->setRelated(new ModelMock());
         $model->getRelated()->id = 456;
 
@@ -336,7 +336,7 @@ class DetailViewTest extends TestCase
     {
         $initTriggered = false;
         $model = new ModelMock();
-        $model->id = 1;
+        $model->id = '1';
         $model->text = 'I`m an object';
 
         $this->markTestIncomplete('Need to implement EventDispatcherListener');
@@ -370,7 +370,7 @@ class ArrayableInterfaceMock implements ArrayableInterface
  */
 class ModelMock
 {
-    public ?int $id;
+    public ?string $id;
     public ?string $text;
 
     public ?object $_related;
